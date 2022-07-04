@@ -1,0 +1,7 @@
+{
+	"delay": 2000,
+	"ignoreRoot": [
+		".git"
+	],
+	"ext": "js,json,ts,hbs"
+}

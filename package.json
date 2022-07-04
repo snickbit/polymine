@@ -1,0 +1,59 @@
+{
+	"name": "@snickbit/polymine",
+	"version": "0.0.0",
+	"description": ">> TODO: Description",
+	"license": "MIT",
+	"main": "./bin/polymine",
+	"bin": {
+		"polymine": "./bin/polymine"
+	},
+	"files": [
+		"bin",
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup",
+		"build:meta": "pnpm run build --minify --metafile",
+		"clean": "shx rm -rf ./bin",
+		"depcheck": "depcheck",
+		"dev": "pnpm run build --sourcemap",
+		"prod": "pnpm run build --minify",
+		"start": "node bin/polymine",
+		"restart": "nodemon bin/polymine",
+		"watch": "pnpm run dev --watch",
+		"docker:build": "docker build -t registry.snickbit.dev/polymine .",
+		"docker:push": "docker push registry.snickbit.dev/polymine",
+		"postversion": "pnpm run docker:build && pnpm run docker:push",
+		"release": "pnpm run prod && pnpm run postversion"
+	},
+	"dependencies": {
+		"@snickbit/node-cli": "^2.0.0",
+		"@snickbit/node-utilities": "^4.3.16",
+		"@snickbit/out": "^2.0.35",
+		"dockerode": "^3.3.2",
+		"raknet": "^1.8.0"
+	},
+	"devDependencies": {
+		"@pnpm/make-dedicated-lockfile": "^0.3.14",
+		"@types/node": "^18.0.0",
+		"depcheck": "^1.4.3",
+		"esbuild": "^0.14.48",
+		"nodemon": "^2.0.18",
+		"shx": "^0.3.4",
+		"tsup": "^6.1.3",
+		"typescript": "^4.7.4"
+	},
+	"engines": {
+		"node": ">= 12"
+	},
+	"tsup": {
+		"entry": [
+			"src/index.ts"
+		],
+		"clean": true,
+		"dts": false,
+		"format": [
+			"cjs"
+		]
+	}
+}
