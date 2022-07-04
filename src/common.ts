@@ -4,7 +4,7 @@ import Observer from './observer'
 import Connector from './connector'
 
 // Configuration
-export const $out = new Out('miner')
+export const $out = new Out('polymine')
 
 export const $config = {
 	port: parseInt(process.env.POLYMINE_PORT || '19132'),

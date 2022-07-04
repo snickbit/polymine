@@ -6,7 +6,7 @@ import packageJson from '../package.json'
 import dgram from 'dgram'
 
 cli()
-	.name('@snickbit/miner')
+	.name('@snickbit/polymine')
 	.version(packageJson.version)
 	.run()
 	.then(async () => {
