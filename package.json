@@ -12,7 +12,7 @@
 		"clean:modules": "shx rm -rf **/node_modules",
 		"depcheck": "turbo run depcheck",
 		"dev": "turbo run dev",
-		"docker:build": "docker build -t registry.snickbit.dev/polymine ",
+		"docker:build": "docker build -t registry.snickbit.dev/polymine .",
 		"docker:publish": "pnpm run docker:build && pnpm run docker:push",
 		"docker:push": "docker push registry.snickbit.dev/polymine",
 		"fix": "eslint **/*.{js,ts,vue,json} --cache --color --fix",
