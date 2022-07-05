@@ -2,26 +2,26 @@
 	"name": "@snickbit/polymine",
 	"version": "0.0.0",
 	"license": "MIT",
-	"main": "server/bin/polymine",
+	"main": "bin/polymine",
 	"bin": {
-		"polymine": "server/bin/polymine"
+		"polymine": "bin/polymine"
 	},
 	"files": [
-		"server/bin",
+		"bin",
 		"dist"
 	],
 	"scripts": {
 		"build": "tsup",
 		"build:meta": "pnpm run build --minify --metafile",
-		"clean": "shx rm -rf server/bin",
+		"clean": "shx rm -rf bin",
 		"depcheck": "depcheck",
 		"dev": "pnpm run build --sourcemap",
 		"docker:build": "docker build -t registry.snickbit.dev/polymine ",
 		"docker:push": "docker push registry.snickbit.dev/polymine",
 		"prod": "pnpm run build --minify",
 		"release": "pnpm run prod && pnpm run postversion",
-		"restart": "nodemon server/bin/polymine",
-		"start": "node server/bin/polymine",
+		"restart": "nodemon bin/polymine",
+		"start": "node bin/polymine",
 		"postversion": "pnpm run docker:build && pnpm run docker:push",
 		"watch": "pnpm run dev --watch"
 	},
