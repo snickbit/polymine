@@ -1,0 +1,14 @@
+{
+	"version": "0.0.0",
+	"npmClient": "pnpm",
+	"command": {
+		"publish": {
+			"conventionalCommits": true,
+			"message": "chore(release): publish new version %v",
+			"registry": "https://npm.remedyred.com"
+		}
+	},
+	"packages": [
+		"packages/*"
+	]
+}
