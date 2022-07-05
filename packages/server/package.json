@@ -16,13 +16,9 @@
 		"clean": "shx rm -rf bin",
 		"depcheck": "depcheck",
 		"dev": "pnpm run build --sourcemap",
-		"docker:build": "docker build -t registry.snickbit.dev/polymine ",
-		"docker:push": "docker push registry.snickbit.dev/polymine",
 		"prod": "pnpm run build --minify",
-		"release": "pnpm run prod && pnpm run postversion",
 		"restart": "nodemon bin/polymine",
 		"start": "node bin/polymine",
-		"postversion": "pnpm run docker:build && pnpm run docker:push",
 		"watch": "pnpm run dev --watch"
 	},
 	"dependencies": {
