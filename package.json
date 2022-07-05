@@ -19,7 +19,7 @@
 		"index": "turbo run index",
 		"lint": "eslint **/*.{js,ts,vue,json} --cache --color",
 		"purge": "turbo run purge",
-		"release": "turbo run prod && pnpm run docker:publish",
+		"release": "turbo run prod && lerna version && pnpm run docker:publish",
 		"update": "ncu --upgrade --target minor --deep",
 		"upgrade": "ncu --upgrade --target newest --filter @snickbit/*,@remedyred/* --deep",
 		"uplist": "ncu --target minor --deep"
