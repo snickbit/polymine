@@ -1,4 +1,4 @@
-import {$out, cleanServerName} from './common'
+import {cleanServerName} from './common'
 import {Out} from '@snickbit/out'
 import EventEmitter from 'events'
 import dgram from 'dgram'
@@ -51,7 +51,8 @@ export default class Connector extends EventEmitter {
 		this.retryTimeout = null
 		this.state = 'Initial'
 
-		this.socket.on('message', (data/* , {port, address}*/) => {
+		this.socket.on('message', (data, {port, address}) => {
+			this.out.verbose(`Received message from ${address}:${port}`, data)
 			const parsed = this.parseUnconnectedPong(data)
 			if (parsed) {
 				this.remoteServerID = parsed.data.params.serverID
@@ -69,12 +70,12 @@ export default class Connector extends EventEmitter {
 		try {
 			const parsed = this.parser.parsePacketBuffer(data)
 			if (parsed.data.name !== 'unconnected_pong') {
-				$out.error('Connector: Ignoring unexpected packet on listen port:', parsed.data.name)
+				this.out.error('Connector: Ignoring unexpected packet on listen port:', parsed.data.name)
 				return null
 			}
 			return parsed
 		} catch (error) {
-			$out.error(`Connector: Ignoring unexpected/invalid packet on listen port.`)
+			this.out.error(`Connector: Ignoring unexpected/invalid packet on listen port.`)
 		}
 	}
 
@@ -114,6 +115,8 @@ export default class Connector extends EventEmitter {
 				unknown: this.clientID
 			}
 		})
+
+		this.out.verbose(`Sending ping to: ${this.address}`, serialized)
 
 		this.socket.send(
 			serialized, 0, serialized.length, this.privatePort, this.host, err => {
