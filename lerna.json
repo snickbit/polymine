@@ -4,8 +4,7 @@
 	"command": {
 		"publish": {
 			"conventionalCommits": true,
-			"message": "chore(release): publish new version %v",
-			"registry": "https://npm.remedyred.com"
+			"message": "chore(release): publish new version %v"
 		}
 	},
 	"packages": [
