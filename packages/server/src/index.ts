@@ -2,7 +2,7 @@
 import {cli} from '@snickbit/node-cli'
 import {$config, $out, connectors, observer, parser, serializer} from './common'
 import {beforeExit} from '@snickbit/node-utilities'
-import packageJson from '../../package.json'
+import packageJson from '../package.json'
 import dgram from 'dgram'
 
 cli()

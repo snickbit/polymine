@@ -1,5 +1,4 @@
 import {$config, $out, connectors, parser, serializer} from './common'
-import {Out} from '@snickbit/out'
 import {Server} from './server'
 import EventEmitter from 'events'
 import Docker from 'dockerode'
@@ -10,7 +9,6 @@ export default class Observer extends EventEmitter {
 	private docker: any
 	private updateTimeout: NodeJS.Timeout | null
 	private readonly servers: Record<string, Server>
-	out: Out
 
 	constructor(discoveryInterval) {
 		super()
