@@ -1,0 +1,31 @@
+{
+	"ignores": [
+		"@quasar/extras",
+		"@snickbit/dates",
+		"@snickbit/utilities",
+		"@vuelidate/core",
+		"@vuelidate/validators",
+		"gsap",
+		"localforage",
+		"vue-chartjs",
+		"vue-recaptcha",
+		"rollup",
+		"layouts",
+		"pages",
+		"bullmq",
+		"bson-ext",
+		"kerberos",
+		"snappy",
+		"mongodb-client-encryption",
+		"aws-crt",
+		"@aws-sdk/signature-v4-crt",
+		"bufferutil",
+		"utf-8-validate",
+		"aws4",
+		"@mongodb-js/zstd"
+	],
+	"oneline": true,
+	"ignore-bin-package": true,
+	"specials": [
+	]
+}

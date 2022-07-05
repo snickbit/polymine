@@ -1,6 +1,6 @@
 {
 	"include": [
-		"src/**/*.ts"
+		"packages/server/src/**/*.ts"
 	],
 	"compilerOptions": {
 		"declaration": true,

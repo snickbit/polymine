@@ -2,7 +2,7 @@
 import {cli} from '@snickbit/node-cli'
 import {$config, $out, connectors, observer, parser, serializer} from './common'
 import {beforeExit} from '@snickbit/node-utilities'
-import packageJson from '../package.json'
+import packageJson from '../../package.json'
 import dgram from 'dgram'
 
 cli()
@@ -10,7 +10,7 @@ cli()
 	.version(packageJson.version)
 	.run()
 	.then(async () => {
-		// Listen for broadcast pings from minecraft clients
+	// Listen for broadcast pings from minecraft clients
 		const socket = dgram.createSocket({type: 'udp4'})
 
 		socket.on('listening', () => {

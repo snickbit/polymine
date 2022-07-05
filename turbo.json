@@ -1,0 +1,42 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"pipeline": {
+		"prod": {
+			"dependsOn": [
+				"^prod"
+			],
+			"outputs": [
+				"dist/**"
+			]
+		},
+		"dev": {
+			"dependsOn": [
+				"^dev"
+			],
+			"outputs": [
+				"dist/**"
+			]
+		},
+		"//#test": {
+			"dependsOn": [
+				"prod"
+			],
+			"outputs": []
+		},
+		"//#lint": {
+			"outputs": []
+		},
+		"//#fix": {
+			"outputs": []
+		},
+		"depcheck": {
+			"outputs": []
+		},
+		"index": {
+			"outputs": []
+		},
+		"clean": {
+			"outputs": []
+		}
+	}
+}
