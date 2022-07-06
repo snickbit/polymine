@@ -9,6 +9,7 @@ WORKDIR /app
 COPY packages /app/packages
 COPY package.json /app/package.json
 COPY pnpm-lock.yaml /app/pnpm-lock.yaml
+COPY pnpm-workspace.yaml /app/pnpm-workspace.yaml
 COPY .npmrc /app/.npmrc
 COPY tsconfig.json /app/tsconfig.json
 
