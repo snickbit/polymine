@@ -16,4 +16,4 @@ RUN pnpm install -P --frozen-lockfile
 
 RUN rm -f /app/.npmrc
 
-CMD [ "node", "/app/bin/polymine"]
+CMD [ "node", "/app/packages/server/bin/polymine"]
