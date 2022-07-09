@@ -22,12 +22,13 @@ cli()
 
 		socket.on('message', (data, {port, address}) => {
 			const parsed = parseUnconnectedPing(data)
-			$out.verbose('Received ping from client', parsed)
+			$out.verbose('Received ping from client', parsed.data)
 			if (parsed) {
+				$out.verbose(`Sending pongs to ${address}:${port}`)
 				for (const connector of Object.values(connectors)) {
 					if (connector.remoteServerID !== null) {
 						const updatedServerName = connector.remoteServerName.replace(connector.privatePort, connector.publicPort)
-						const serialized = serializer.createPacketBuffer({
+						const pong = {
 							name: 'unconnected_pong',
 							params: {
 								pingID: parsed.data.params.pingID,
@@ -35,8 +36,9 @@ cli()
 								magic: connector.remoteServerMagic,
 								serverName: updatedServerName
 							}
-						})
-						$out.verbose('Sending pong to client', serialized)
+						}
+						const serialized = serializer.createPacketBuffer(pong)
+						$out.verbose('Sending pong to client', pong)
 						socket.send(serialized, 0, serialized.length, port, address)
 					}
 				}
