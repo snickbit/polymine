@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4](https://github.com/snickbit/polymine/compare/v0.0.3...v0.0.4) (2022-07-09)
+
+### Bug Fixes
+
+* correct bin path ([a6876ff](https://github.com/snickbit/polymine/commit/a6876ff224ae975682958f7811344595c29389b0))
+* don't display buffers, only output relevant data ([79d45e2](https://github.com/snickbit/polymine/commit/79d45e2a8ed9fede65ed7878d29216785f7f2763))
+
 ## [0.0.3](https://github.com/snickbit/polymine/compare/v0.0.2...v0.0.3) (2022-07-05)
 
 **Note:** Version bump only for package root
