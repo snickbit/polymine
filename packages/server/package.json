@@ -18,7 +18,7 @@
 		"depcheck": "depcheck",
 		"dev": "pnpm run build --sourcemap",
 		"prod": "pnpm run build --minify",
-		"restart": "nodemon bin/polymine",
+		"restart": "nodemon bin/polymine --out:polymine=5",
 		"start": "node bin/polymine",
 		"watch": "pnpm run dev --watch"
 	},

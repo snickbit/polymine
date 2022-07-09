@@ -3,5 +3,8 @@
 	"ignoreRoot": [
 		".git"
 	],
-	"ext": "js,json,ts,hbs"
+	"ext": "js,json,ts,hbs",
+	"watch": [
+		"dist"
+	]
 }
